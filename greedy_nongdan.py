@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 16 10:10:25 2023
-
-@author: Admin
-"""
-
 from operator import itemgetter
 N, m, M = map(int, input().split())
 fields = []
@@ -27,4 +20,5 @@ def solve(N,m,M,fields):
     print(len(harvested))
     for i, day in harvested:
         print(i, day)
+    
 solve(N,m,M,fields)
