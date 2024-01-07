@@ -24,11 +24,9 @@ def best_brute_force(Fields, m, M, iterations=100):
 # Evaluate the given plan
 def evaluate_plan(plan, fields, m, M):
     total_harvested = 0
-    total_days = set()
     for i, day in enumerate(plan):
         if day > 0:
             total_harvested += fields[i][0] # Add the productivity of a day 
-            total_days.add(day)
     return total_harvested
     
 # consider whether the plan is valid or no
@@ -60,7 +58,6 @@ def local_search(N, m, M, fields):
         if neighbor_score > current_score and is_valid_plan(neighbor_plan, fields, m, M):
             current_plan = neighbor_plan 
         
-
         iteration += 1
         
     return current_plan
@@ -83,8 +80,10 @@ for i, day in enumerate(harvest_plan, start=1):
     if day > 0:
         print(i, day)
 
+opt = sum(fields[i][0] for i, day in enumerate(harvest_plan))
 end = time.time()
 
+print('\n Optimal Productivity: ',opt)
 print('\n')
 print('Running Time: ',end-start)
 '''
