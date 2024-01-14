@@ -1,7 +1,9 @@
 import time
-
+# from operator import itemgetter
 def solve(N,m,M,fields):
     fields.sort(key=lambda x:x[0])
+    
+    print(fields)
     days = [0] * (N+1) 
     harvested = []  
     for d, s, e, i in fields:
